@@ -1,2 +1,3 @@
-# ‚¨ŽŽ‚µdiscord bot
-ƒeƒXƒg
+# ãŠè©¦ã— discord bot
+
+ãƒ†ã‚¹ãƒˆã€‚
