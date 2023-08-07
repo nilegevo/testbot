@@ -47,28 +47,16 @@ namespace test
                 var url = $"http://api.openweathermap.org/data/2.5/weather?q={region}&units=metric&lang=ja&APPID={ConfigurationManager.AppSettings["apikey"]}";
                 var result = await client.GetAsync(url);
 
-                // レスポンスのステータスが成功時
                 if (result.IsSuccessStatusCode)
                 {
-                    // JSONを文字列に変換
                     var jsonString = await result.Content.ReadAsStringAsync();
-                    // 文字列のJSONをデシリアライズ
                     var res = JsonConvert.DeserializeObject<Temperatures>(jsonString);
                     WeatherInfo = res;
-                    // 取得結果を表示する
-                    Console.WriteLine($"Weather:{res.Weather[0].Description}");
-                    Console.WriteLine($"Name:{res.Name}");
-                    Console.WriteLine($"TempMax:{res.JsonMain.TempMax}");
-                    Console.WriteLine($"TempMin:{res.JsonMain.TempMin}");
                 }
             }
         
-        
         }
 
-
-
-        string FormatResponse(string response) => response.Replace("[", "").Replace("]", "").Replace("{", "").Replace("}", "");
     }
 
     public  class CatImage

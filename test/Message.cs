@@ -25,7 +25,7 @@ namespace test
         {
             var manager = new HttpController();
             await manager.GetWeatherInfo("Tokyo,jp");
-            var mes = "現在の東京のお天気をお伝えしますわよ♡\n" +
+            var mes = "現在の東京のお天気をお伝えしますわ\n" +
                 $"Weather:{manager.WeatherInfo.Weather[0].Description}\n" +
                 $"Region:{manager.WeatherInfo.Name}\n" +
                 $"TempMax:{manager.WeatherInfo.JsonMain.TempMax}\n" +
